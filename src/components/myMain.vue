@@ -1,8 +1,8 @@
 <template>
-    <main class="d-flex flex-wrap mx-auto">
+    <main class="d-flex flex-column justify-content-center align-items-center">
         <SearchFilter @myFilter="getResult"/>
-        <div class="row d-flex justify-content-center align-items-center mx-auto">
-            <div id="card-area" class="col-12 d-flex flex-wrap justify-content-center align-content-center">
+        <div class="row justify-content-center">
+            <div id="card-area" class="d-flex flex-wrap justify-content-center align-content-center">
                 <CardComponents v-for="(card, index) in filteredCard" :key="index" :myCard="card"/>
             </div>
         </div>
@@ -68,6 +68,6 @@ main {
     #card-area {
         width: 60%;
         height: calc(100vh - 127px);
-    } 
+    }
 }
 </style>

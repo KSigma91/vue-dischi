@@ -1,5 +1,5 @@
 <template>
-    <div class="card col-2 col-sm-2 col-md-4 d-flex justify-content-evenly mx-3 m-2 p-2">
+    <div class="card d-flex justify-content-evenly mx-3 m-2 p-2">
         <img class="mx-auto" :src="myCard.poster" :alt="myCard.title">
         <h5>{{ myCard.title.toUpperCase() }}</h5>
         <div class="info">
@@ -21,7 +21,7 @@ export default {
 <style scoped lang="scss">
 .card {
     background: #2e3a46;
-    max-width: 183px;
+    width: 187px;
     min-height: 342px;
     border-radius: 0;
 
