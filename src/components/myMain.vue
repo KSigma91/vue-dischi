@@ -49,8 +49,8 @@ export default {
             if(this.searchInput === "") {
                 return this.searchInput;
             } else {
-                return this.searchInput.filter(item => {
-                    return item.genre.toLowerCase().includes(this.searchInput.toLowerCase());
+                return this.listCard.filter(item => {
+                    return item.toLowerCase().includes(this.listCard.genre.toLowerCase());
                 });
             }
         }
