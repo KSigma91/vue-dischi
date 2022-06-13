@@ -1,8 +1,8 @@
 <template>
     <select id="search" class="d-flex mx-auto m-3"
-    v-model="inputClick" @click="$emit('filter', inputClick)"
+    v-model="inputClick" @click="$emit('myFilter', inputClick)"
     >
-        <option value=""></option>
+        <option value="genre"></option>
     </select>
 </template>
 
@@ -11,7 +11,7 @@ export default {
     name: 'SearchFilter',
     data() {
         return {
-           inputClick: "" ,
+           inputClick: "",
         };
     }
 }
