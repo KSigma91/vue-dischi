@@ -1,27 +1,25 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <header>
-      <myHeader/>
+      <MyHeader/>
     </header>
 
     <main>
-      <myMain/>
+      <MyMain/>
     </main>
   </div>
 </template>
 
 <script>
-//import axios from 'axios'
-import myHeader from './components/myHeader.vue'
-import myMain from './components/myMain.vue'
+import MyHeader from './components/MyHeader.vue'
+import MyMain from './components/MyMain.vue'
+
 
 export default {
   name: 'App',
   components: {
-    myHeader,
-    myMain
+    MyHeader,
+    MyMain
 }
 }
 </script>
