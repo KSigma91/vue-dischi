@@ -1,8 +1,8 @@
 <template>
-    <main class="d-flex flex-column mx-auto">
+    <main class="d-flex flex-wrap mx-auto">
         <SearchFilter @myFilter="getResult"/>
         <div class="row d-flex justify-content-center align-items-center mx-auto">
-            <div id="card-area" class="d-flex flex-wrap justify-content-center align-content-center">
+            <div id="card-area" class="col-12 d-flex flex-wrap justify-content-center align-content-center">
                 <CardComponents v-for="(card, index) in filteredCard" :key="index" :myCard="card"/>
             </div>
         </div>
@@ -12,7 +12,7 @@
 <script>
 import axios from 'axios'
 import CardComponents from './CardComponents'
-import SearchFilter from './SearchFilter.vue'
+import SearchFilter from './SearchFilter'
 
 export default {
     name: 'MyMain',
@@ -24,7 +24,7 @@ export default {
         return {
             apiUrl: "https://flynn.boolean.careers/exercises/api/array/music",
             listCard: [],
-            searchInput: "",
+            searchInput: ""
         }
     },
     created() {
@@ -39,14 +39,15 @@ export default {
                 console.log("Errore", error);
             })
         },
-        getResult(list) {
-            this.searchInput = list;
-            console.log(list);
-        }
+        getResult(listGenre) {
+            this.searchInput = listGenre;
+            console.log(listGenre);
+        },
+
     },
     computed: {
         filteredCard() {
-            if(this.searchInput === "") {
+            if(this.searchInput && this.searchAuthor === "") {
                 return this.listCard;
             } else {
                 return this.listCard.filter(item => {
@@ -61,15 +62,12 @@ export default {
 <style scoped lang="scss">
 main {
     background: #1e2d3b;
+    width: 100%;
+    height: calc(100vh - 65px);
 
-    .row {
-        width: 100%;
+    #card-area {
+        width: 60%;
         height: calc(100vh - 127px);
-
-        #card-area {
-            width: 60%;
-            height: 70%;
-        }
-    }
+    } 
 }
 </style>
