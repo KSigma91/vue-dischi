@@ -1,6 +1,8 @@
 <template>
-    <main class="d-flex flex-column justify-content-center align-items-center">
-        <SearchFilter @myFilter="getResult"/>
+    <main>
+        <div id="select-area" class="row justify-content-center align-items-center mx-auto">
+            <SearchFilter @myFilter="getResult"/>
+        </div>
         <div class="row justify-content-center">
             <div id="card-area" class="d-flex flex-wrap justify-content-center align-content-center">
                 <CardComponents v-for="(card, index) in filteredCard" :key="index" :myCard="card"/>
@@ -47,7 +49,7 @@ export default {
     },
     computed: {
         filteredCard() {
-            if(this.searchInput && this.searchAuthor === "") {
+            if(this.searchInput === "") {
                 return this.listCard;
             } else {
                 return this.listCard.filter(item => {
@@ -64,6 +66,11 @@ main {
     background: #1e2d3b;
     width: 100%;
     height: calc(100vh - 65px);
+
+    #select-area {
+        width: 200px;
+        height: 30px;
+    }
 
     #card-area {
         width: 60%;

@@ -1,6 +1,6 @@
 <template>
     <select id="search-genre" class="d-flex mx-auto m-3"
-    v-model="inputClick" @click="$emit('myFilter', inputClick)"
+    v-model="inputClick" @change="$emit('myFilter', inputClick)"
     >
         <option value="">All</option>
         <option value="rock">Rock</option>
@@ -23,9 +23,8 @@ export default {
 
 <style scoped lang="scss">
     #search-genre {
+        padding: 5px;
         border-radius: 50px;
-        min-width: 200px;
-        height: 30px;
         outline: 0;
         font-size: 15px;
     }
